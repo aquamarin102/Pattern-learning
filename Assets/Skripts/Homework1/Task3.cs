@@ -1,6 +1,6 @@
 using System;
 
-namespace Homework.Homework1
+namespace Zoork.Homework1
 {
     public class Task3
 
