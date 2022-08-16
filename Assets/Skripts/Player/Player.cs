@@ -4,7 +4,7 @@ using Zoork.Weapon;
 
 namespace Zoork.Player
 {
-    internal sealed class Player : MonoBehaviour
+    internal sealed class Player : MonoBehaviour, IPlayer
     {
         [SerializeField] private float _speed;
         [SerializeField] private float _acceleration;
@@ -60,6 +60,11 @@ namespace Zoork.Player
         private void OnCollisionEnter2D(Collision2D col)
         {
            _health.ChangedHP(_changeHP, gameObject);
+        }
+
+        public void Attack()
+        {
+            
         }
     }
 }

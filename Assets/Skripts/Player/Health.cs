@@ -1,7 +1,7 @@
 using UnityEngine;
 using Zoork.Interfaces;
 
-internal sealed class Health :  IHeath
+public sealed class Health :  IHeath
 {
     private readonly float _maxHealth;
     private float _curHealth;
