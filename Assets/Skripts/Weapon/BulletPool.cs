@@ -1,11 +1,10 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Zoork.Interfaces;
 
 namespace Zoork.Weapon
 {
-    public class BulletPool : MonoBehaviour
+    public class BulletPool : MonoBehaviour, IBullet
     {
         private SimplePool _simplePool;
 
@@ -24,6 +23,11 @@ namespace Zoork.Weapon
         private void OnDestroy()
         {
             _simplePool.Dispose();
+        }
+
+        public void Damage()
+        {
+            throw new NotImplementedException();
         }
     }
 }
