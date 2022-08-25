@@ -5,6 +5,7 @@ using Interfaces;
 using UnityEngine;
 using Zoork.Enemy;
 using Zoork.Interfaces;
+using Zoork.Player;
 using Zoork.Weapon;
 
 namespace Zoork
@@ -23,14 +24,14 @@ namespace Zoork
             IEnemy enemy2 = _serverFactory.CreateEnemy();
             IPlayer player2 = _serverFactory.CreatePlayer();
             
-            Asteroid.CreateAsteroidEnemy(new HealthEnemy(100f, 100f));
+            Asteroid.CreateAsteroidEnemy(new HealthEnemy(100f, 100f), new MaasiveAttack(10f));
             
             IEnemyFactory factory = new AsteroidFactory();
-            factory.Create(new HealthEnemy(100f, 100f));
+            factory.Create(new HealthEnemy(100f, 100f), new MaasiveAttack(10f));
 
             Asteroid.Factory = factory;
 
-            Asteroid.Factory.Create(new HealthEnemy(100f, 100f));
+            Asteroid.Factory.Create(new HealthEnemy(100f, 100f),  new MaasiveAttack(10f));
         }
     }
 }

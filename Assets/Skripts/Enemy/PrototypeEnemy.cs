@@ -8,7 +8,7 @@ public class PrototypeEnemy : MonoBehaviour
   
   private void DeepCopyEnemy()
   {
-    var origin = AsteroidFactory.Create(hp);
-    var deepCopy = origin.DeepCopy();
+    //var origin = AsteroidFactory.Create(hp);
+    //var deepCopy = origin.DeepCopy();
   }
 }
