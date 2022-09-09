@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Interfaces;
@@ -7,7 +8,7 @@ using Zoork.Player;
 
 namespace Zoork.Enemy
 {
-    public abstract class Enemy : MonoBehaviour, IEnemy
+    public abstract class Enemy : MonoBehaviour, IEnemy, IHit
     {
         public static IEnemyFactory Factory;
 
@@ -35,6 +36,12 @@ namespace Zoork.Enemy
         public void Attack()
         {
             
+        }
+
+        public event Action<float> OnHitChange = delegate(float f) {  };
+        public void Hit(float damage)
+        {
+            OnHitChange.Invoke(damage);
         }
     }
 }
